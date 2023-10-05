@@ -15,6 +15,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { Button } from '@/components/ui/button';
 
 const components: { title: string; href: string }[] = [
   {
@@ -53,7 +54,7 @@ const components: { title: string; href: string }[] = [
 
 export default function navbar() {
   return (
-    <nav className="bg-white flex justify-center items-center fixed w-full h-12 z-10 shadow shadow-[rgb(227,6,20)]">
+    <nav className="bg-white flex justify-center items-center fixed w-full h-12 z-10 shadow shadow-[rgb(227,6,20)] max-md:justify-between max-md:p-4">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -77,14 +78,14 @@ export default function navbar() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          <NavigationMenuItem className="max-md:hidden">
             <Link href="/docs" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Profesores
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          <NavigationMenuItem className="max-md:hidden">
             <NavigationMenuTrigger>Asignaturas</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -93,28 +94,27 @@ export default function navbar() {
                     key={component.title}
                     title={component.title}
                     href={component.href}
-                  >
-                  </ListItem>
+                  ></ListItem>
                 ))}
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          <NavigationMenuItem className="max-md:hidden">
             <Link href="/docs" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Asesorias
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
+          <NavigationMenuItem className="max-md:hidden">
             <Link href="/docs" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Eventos
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+          <NavigationMenuItem className="max-md:hidden">
+            <Link href="/About" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Quienes Somos
               </NavigationMenuLink>
@@ -122,6 +122,23 @@ export default function navbar() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+      <Button className='bg-white text-black hover:bg-red-500 hover:text-white md:hidden'>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.25"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" x2="21" y1="6" y2="6" />
+          <line x1="3" x2="21" y1="12" y2="12" />
+          <line x1="3" x2="21" y1="18" y2="18" />
+        </svg>
+      </Button>
     </nav>
   );
 }
