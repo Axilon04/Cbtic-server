@@ -44,7 +44,7 @@ const components: { title: string; href: string }[] = [
   },
   {
     title: 'Fisica II. Oscilaciones y Ondas',
-    href: '/Asignaturas/Fisica_II'
+    href: '/Asignaturas/Pendulo'
   },
   {
     title:'Química Orgánica',
@@ -116,7 +116,7 @@ export default function navbar() {
           <NavigationMenuItem className="max-md:hidden">
             <Link href="/About" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Quienes Somos
+                Quiénes Somos
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>

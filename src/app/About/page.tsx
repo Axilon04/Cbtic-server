@@ -21,19 +21,19 @@ export default function About() {
       >
         <p className="text-justify">
           El Departamento de Ciencias Básicas de la Corporación Universitaria
-          del Meta, forma parte de la Escuela de Ingeniería de esta Institución,
-          y cumple funciones de docencia, investigación y proyección social en
-          el campo de las ciencias naturales, las matemáticas, la química y la
-          biología. Este departamento tiene como función sustantiva la formación
-          integral de los futuros ingenieros, economistas y administradores de
-          empresa que se forman en esta prestigiosa institución. Esto hace que
-          el Departamento de Ciencias Básicas de UNIMETA, sea una parte
-          fundamental de la formación de profesionales integrales, capaces de
-          abarcar los problemas sociales, culturales y económicos de la región
-          de la Orinoquia colombiana, desde una perspectiva cuantitativa,
-          cualitativa y de cuidado del medio ambiente, de tal manera que los
-          egresados de nuestra Institución Universitaria sean capaces de
-          enfrentar los retos que la modernidad impone
+          del Meta, es parte de la Escuela de Ingeniería de esta Institución, y
+          cumple funciones de docencia, investigación y proyección social en el
+          campo de las ciencias naturales, las matemáticas, la química y la
+          biología. Este departamento tiene como función sustantiva la
+          preparación integral de los futuros ingenieros, economistas y
+          administradores de empresa que estudian en esta prestigiosa
+          institución. Esto hace que el Departamento de Ciencias Básicas de
+          UNIMETA, sea la columna vertebral de la formación de profesionales
+          integrales, capaces de abarcar los problemas sociales, culturales y
+          económicos de la región de la Orinoquia colombiana, desde una
+          perspectiva cuantitativa, cualitativa y de cuidado del medio ambiente,
+          de tal manera que los egresados de nuestra Institución Universitaria
+          sean capaces de enfrentar los retos que la modernidad impone.
         </p>
         <div className="w-full flex flex-row">
           <div className="bg-gray-800 w-2/4 h-[35rem]"></div>
