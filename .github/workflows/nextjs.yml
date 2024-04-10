@@ -92,7 +92,7 @@ jobs:
     steps:
       - name: Deploy to Server
         id: deployment
-        run: ${{ steps.detect-package-manager.outputs.runner }} npm run start
+        run: npm run start
         continue-on-error: true
       - name: Check Deployment Status
         run: |
