@@ -92,7 +92,9 @@ jobs:
     steps:
       - name: Deploy to Server
         id: deployment
-        run: npm run start
+        run: |
+          ${{ steps.detect-package-manager.outputs.runner }} npm run start &
+          sleep 10 # Espera unos segundos para asegurar que la aplicación se inicie completamente
         continue-on-error: true
       - name: Check Deployment Status
         run: |
