@@ -93,3 +93,12 @@ jobs:
       - name: Deploy to Server
         id: deployment
         run: ${{ steps.detect-package-manager.outputs.runner }} npm run start
+        continue-on-error: true
+      - name: Check Deployment Status
+        run: |
+          if [ ${{ steps.deployment.outcome }} == "success" ]; then
+            echo "Deployment successful"
+          else
+            echo "Deployment failed"
+            exit 1
+          fi
