@@ -93,14 +93,4 @@ jobs:
       - name: Deploy to Server
         id: deployment
         run: |
-          ${{ steps.detect-package-manager.outputs.runner }} npm run start &
-          sleep 10 # Espera unos segundos para asegurar que la aplicación se inicie completamente
-        continue-on-error: true
-      - name: Check Deployment Status
-        run: |
-          if [ ${{ steps.deployment.outcome }} == "success" ]; then
-            echo "Deployment successful"
-          else
-            echo "Deployment failed"
-            exit 1
-          fi
+          npm start & npx wait-on http://localhost:3000
