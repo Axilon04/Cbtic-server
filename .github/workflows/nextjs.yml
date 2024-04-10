@@ -84,12 +84,12 @@ jobs:
 
   # Deployment job
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+#    environment:
+#      name: github-pages
+#      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: self-hosted
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to Server
         id: deployment
-        uses: actions/deploy-pages@v4
+        run: ${{ steps.detect-package-manager.outputs.runner }} npm run start
