@@ -93,4 +93,14 @@ jobs:
       - name: Deploy to Server
         id: deployment
         run: |
-          npm start && npx wait-on http://localhost:3000
+          $jobName = "Start Cbtic"
+          $existingJob = Get-Job -Name $jobName -ErrorAction SilentlyContinue
+
+          if ($existingJob) {
+            Write-Output "El trabajo '$jobName' ya se está ejecutando. Deteniendo..."
+            Stop-Job -Name $jobName
+            Remove-Job -Name $jobName
+          }    
+
+          Write-Output "Iniciando el trabajo '$jobName'..."
+          Start-Job -Name $jobName {npm run start}
